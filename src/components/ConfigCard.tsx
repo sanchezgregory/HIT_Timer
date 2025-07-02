@@ -2,12 +2,16 @@ import type { ConfigCardProps } from '../types';
 
 export function ConfigCard({ children, title, icon, color }: ConfigCardProps) {
   return (
-    <div className={`rounded-xl shadow-lg p-6 bg-gradient-to-br ${color} text-white flex flex-col gap-2 mb-6`}>
-      <div className="flex items-center gap-3 mb-2">
-        <span className="text-2xl">{icon}</span>
-        <h3 className="text-lg font-bold tracking-wide">{title}</h3>
+    <div className="config-card">
+      <div className="flex items-center gap-3 mb-6">
+        <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center text-white text-lg`}>
+          {icon}
+        </div>
+        <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
       </div>
-      {children}
+      <div className="space-y-4">
+        {children}
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Config, Exercise } from './types';
 import { defaultExercises } from './constants';
 import { useLocalStorage } from './hooks/useLocalStorage';
@@ -33,16 +33,16 @@ export default function App() {
   const handleCloseModal = () => setModalOpen(false);
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-blue-100 to-purple-100">
+    <div className="min-h-screen flex bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <Sidebar 
         started={started} 
         serie={sidebarSerie} 
         exerciseIdx={sidebarExerciseIdx} 
         onOpenExerciseConfig={handleOpenModal} 
       />
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-w-0">
         <Topbar onOpenExerciseConfig={handleOpenModal} />
-        <main className="flex-1 flex flex-col items-center justify-start px-2 md:px-8 py-4">
+        <main className="flex-1 flex flex-col items-center justify-start px-4 md:px-8 lg:px-12 xl:px-16 py-6 max-w-7xl mx-auto w-full">
           {!started ? (
             <ConfigScreen 
               config={config} 
